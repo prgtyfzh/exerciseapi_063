@@ -71,7 +71,7 @@ class _KategoriBarangState extends State<KategoriBarang> {
                             listKategoriBarang.removeAt(index);
                           });
                           var snackBar = const SnackBar(
-                              content: Text('Data Berhasil Dihapus'));
+                              content: Text('Kategori Berhasil Dihapus'));
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         },
                         icon: const Icon(Icons.delete),
