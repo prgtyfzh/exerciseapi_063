@@ -30,7 +30,7 @@ class _UpdateKategoriBarangState extends State<UpdateKategoriBarang> {
     var formkey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Update Kategori Barang'),
+        title: const Text('Edit Kategori Barang'),
       ),
       body: Form(
         key: formkey,
@@ -39,7 +39,7 @@ class _UpdateKategoriBarangState extends State<UpdateKategoriBarang> {
           children: [
             TextFormField(
               decoration: const InputDecoration(
-                hintText: 'Update Kategori Barang',
+                hintText: 'Nama Kategori Barang',
                 labelText: 'Nama Kategori Barang',
               ),
               onChanged: (value) {
@@ -66,10 +66,15 @@ class _UpdateKategoriBarangState extends State<UpdateKategoriBarang> {
                           builder: (context) => const KategoriBarang()));
 
                   var snackBar =
-                      const SnackBar(content: Text('Data Berhasil Disimpan'));
+                      const SnackBar(content: Text('Kategori Berhasil Diedit'));
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }
               },
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(5, 40),
+                elevation: 5,
+                textStyle: const TextStyle(fontWeight: FontWeight.bold),
+              ),
               child: const Text('Simpan'),
             ),
           ],

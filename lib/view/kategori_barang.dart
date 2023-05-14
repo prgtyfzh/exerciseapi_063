@@ -48,7 +48,7 @@ class _KategoriBarangState extends State<KategoriBarang> {
             padding: const EdgeInsets.only(top: 5, left: 10, right: 10),
             child: InkWell(
               onLongPress: () {
-                Navigator.pushReplacement(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => UpdateKategoriBarang(
