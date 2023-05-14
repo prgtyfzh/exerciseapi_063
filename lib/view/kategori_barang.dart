@@ -48,7 +48,7 @@ class _KategoriBarangState extends State<KategoriBarang> {
             padding: const EdgeInsets.only(top: 5, left: 10, right: 10),
             child: InkWell(
               onLongPress: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => UpdateKategoriBarang(
@@ -86,7 +86,7 @@ class _KategoriBarangState extends State<KategoriBarang> {
       )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
+          Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                   builder: (context) => const AddKategoriBarang()));
