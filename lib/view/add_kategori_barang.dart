@@ -47,7 +47,7 @@ class _AddKategoriBarangState extends State<AddKategoriBarang> {
                 return null;
               },
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: 10.0),
             ElevatedButton(
               onPressed: () {
                 if (formkey.currentState!.validate()) {
@@ -58,11 +58,16 @@ class _AddKategoriBarangState extends State<AddKategoriBarang> {
                       MaterialPageRoute(
                           builder: (context) => const KategoriBarang()));
 
-                  var snackBar =
-                      const SnackBar(content: Text('Data Berhasil Disimpan'));
+                  var snackBar = const SnackBar(
+                      content: Text('Kategori Berhasil Ditambahkan'));
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }
               },
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(5, 40),
+                elevation: 5,
+                textStyle: const TextStyle(fontWeight: FontWeight.bold),
+              ),
               child: const Text('Simpan'),
             ),
           ],
