@@ -15,6 +15,7 @@ class KategoriBarang extends StatefulWidget {
 class _KategoriBarangState extends State<KategoriBarang> {
   final kategoriBarangController = KategoriBarangController();
   List<KategoriBarangModel> listKategoriBarang = [];
+  String? nama;
 
   @override
   void initState() {
@@ -41,17 +42,24 @@ class _KategoriBarangState extends State<KategoriBarang> {
         itemBuilder: (context, index) {
           return Card(
             child: ListTile(
-              title: Text(listKategoriBarang[index].nama),
-              trailing: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const UpdateKategoriBarang()));
-                },
-                icon: const Icon(Icons.edit),
-              ),
-            ),
+                title: Text(listKategoriBarang[index].nama),
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UpdateKategoriBarang(
+                                      id: listKategoriBarang[index].id,
+                                      nama: listKategoriBarang[index].nama,
+                                    )));
+                      },
+                      icon: const Icon(Icons.edit),
+                    ),
+                  ],
+                )),
           );
         },
       )),

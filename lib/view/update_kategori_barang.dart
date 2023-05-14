@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 import '../controller/kategori_barang_controller.dart';
-import '../model/kategori_barang_model.dart';
 import 'kategori_barang.dart';
 
 class UpdateKategoriBarang extends StatefulWidget {
-  const UpdateKategoriBarang({super.key});
+  final int? id;
+  final String? nama;
 
-  get nama => null;
+  const UpdateKategoriBarang({
+    Key? key,
+    this.nama,
+    this.id,
+  }) : super(key: key);
 
   @override
   State<UpdateKategoriBarang> createState() => _UpdateKategoriBarangState();
@@ -15,11 +19,10 @@ class UpdateKategoriBarang extends StatefulWidget {
 
 class _UpdateKategoriBarangState extends State<UpdateKategoriBarang> {
   final kategoriBarangController = KategoriBarangController();
-  late String nama;
+  String? name;
 
-  void updateKategoriBarang() async {
-    KategoriBarangModel kategoriBarang = KategoriBarangModel(nama: nama!);
-    await kategoriBarangController.updateKategoriBarang(kategoriBarang);
+  void updateKategoriBarang(int id, String nama) async {
+    await kategoriBarangController.updateKategoriBarang(id, nama);
   }
 
   @override
@@ -35,14 +38,14 @@ class _UpdateKategoriBarangState extends State<UpdateKategoriBarang> {
           padding: const EdgeInsets.all(16.0),
           children: [
             TextFormField(
-              controller: TextEditingController(text: widget.nama),
               decoration: const InputDecoration(
                 hintText: 'Update Kategori Barang',
                 labelText: 'Nama Kategori Barang',
               ),
               onChanged: (value) {
-                nama = value;
+                name = value;
               },
+              initialValue: widget.nama,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Nama Kategori is required';
@@ -55,8 +58,8 @@ class _UpdateKategoriBarangState extends State<UpdateKategoriBarang> {
               onPressed: () {
                 if (formkey.currentState!.validate()) {
                   formkey.currentState!.save();
-                  updateKategoriBarang();
-
+                  kategoriBarangController.updateKategoriBarang(
+                      widget.id!, name!);
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
