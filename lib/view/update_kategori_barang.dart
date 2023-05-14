@@ -31,6 +31,17 @@ class _UpdateKategoriBarangState extends State<UpdateKategoriBarang> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit Kategori Barang'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const KategoriBarang(),
+              ),
+            );
+          },
+        ),
       ),
       body: Form(
         key: formkey,
