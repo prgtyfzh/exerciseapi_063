@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 class KategoriBarangModel {
-  final String nama;
+  late final String nama;
   KategoriBarangModel({
     required this.nama,
   });

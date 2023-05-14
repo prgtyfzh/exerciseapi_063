@@ -1,3 +1,4 @@
+import 'package:apipoke/view/update_kategori_barang.dart';
 import 'package:flutter/material.dart';
 
 import '../controller/kategori_barang_controller.dart';
@@ -42,7 +43,12 @@ class _KategoriBarangState extends State<KategoriBarang> {
             child: ListTile(
               title: Text(listKategoriBarang[index].nama),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const UpdateKategoriBarang()));
+                },
                 icon: const Icon(Icons.edit),
               ),
             ),

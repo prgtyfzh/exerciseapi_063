@@ -33,4 +33,6 @@ class KategoriBarangController {
       throw Exception('Gagal manambahkan data kategori barang');
     }
   }
+
+  updateKategoriBarang(KategoriBarangModel kategoriBarang) {}
 }
