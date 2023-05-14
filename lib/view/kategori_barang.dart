@@ -36,62 +36,6 @@ class _KategoriBarangState extends State<KategoriBarang> {
 
   @override
   Widget build(BuildContext context) {
-    // return Scaffold(
-    //   appBar: AppBar(
-    //     title: const Text('Kategori Barang'),
-    //   ),
-    //   body: SafeArea(
-    //       child: ListView.builder(
-    //     itemCount: listKategoriBarang.length,
-    //     itemBuilder: (context, index) {
-    //       return Padding(
-    //         padding: const EdgeInsets.only(right: 10, left: 10, top: 8),
-    //         child: InkWell(
-    //           onLongPress: () {
-    //             Navigator.push(
-    //               context,
-    //               MaterialPageRoute(
-    //                 builder: (context) => UpdateKategoriBarang(
-    //                   id: listKategoriBarang[index].id,
-    //                   nama: listKategoriBarang[index].nama,
-    //                 ),
-    //               ),
-    //             );
-    //           },
-    //           child: Card(
-    //             elevation: 10,
-    //             child: ListTile(
-    //               title: Text(listKategoriBarang[index].nama),
-    //               trailing: IconButton(
-    //                 onPressed: () {
-    //                   deleteKategoriBarang(listKategoriBarang[index].id);
-    //                   setState(() {
-    //                     listKategoriBarang.removeAt(index);
-    //                   });
-    //                   var snackBar = const SnackBar(
-    //                       content: Text('Data Berhasil Dihapus'));
-    //                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-    //                 },
-    //                 icon: const Icon(Icons.delete),
-    //               ),
-    //             ),
-    //           ),
-    //         ),
-    //       );
-    //     },
-    //   )),
-    //   floatingActionButton: FloatingActionButton(
-    //     onPressed: () {
-    //       Navigator.push(
-    //         context,
-    //         MaterialPageRoute(
-    //           builder: (context) => const AddKategoriBarang(),
-    //         ),
-    //       );
-    //     },
-    //     child: const Icon(Icons.add),
-    //   ),
-    // );
     return Scaffold(
       appBar: AppBar(
         title: const Text('Kategori Barang'),
